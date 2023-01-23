@@ -10,7 +10,7 @@ describe("Account", () => {
   });
 
   describe("deposit", () => {
-    it ("returns updated account balance following deposit", () => {
+    it ("returns updated account balance following a deposit", () => {
       const account = new Account();
       account.deposit(239)
 
@@ -25,9 +25,13 @@ describe("Account", () => {
       expect(account.accountBalance()).toEqual(3715.98)
     });
   });
-});  
+ 
+  describe("withdraw", () => {
+    it("returns updated account balance following a withdrawal", () => {
+      const account = new Account();
+      account.withdraw(456);
 
-
-  // describe("withdraw", () => {
-  //   it("returns updated account balance following")
-  // })
+      expect(account.accountBalance()).toEqual(-456);
+    });
+  });
+}); 
