@@ -7,12 +7,27 @@ describe("Account", () => {
       
       expect(account.accountBalance()).toEqual(0);
     });
-
-    // it("returns account balance following deposits", () => {
-    //   let account = new Account();
-    //   account.deposit(1000.00);
-    //   account.deposit(51.19);
-    //   expect(account.accountBalance()).toEqual(1051.19);
-    // });
   });
-});
+
+  describe("deposit", () => {
+    it ("returns updated account balance following deposit", () => {
+      const account = new Account();
+      account.deposit(239)
+
+      expect(account.accountBalance()).toEqual(239);
+    })
+
+    it ("returns updated account balance following several deposits", () => {
+      const account = new Account();
+      account.deposit(3450.98);
+      account.deposit(265);
+
+      expect(account.accountBalance()).toEqual(3715.98)
+    });
+  });
+});  
+
+
+  // describe("withdraw", () => {
+  //   it("returns updated account balance following")
+  // })
