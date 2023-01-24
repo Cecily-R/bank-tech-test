@@ -12,7 +12,7 @@ As I went about implementing my plan, each class got gradually heavier as factor
 
 While there are areas in which I could streamline my approach and avoid repetition, overall, I'm happy with the structure of the programme and how the classes interact with one another. 
 
-## My Structure 
+### My Structure 
 
 Account class: 
  - accountBalance function: balance is initialised within the constructor of the class, and returned in the function. This function is then called within other functions and tests to return the account balance following a transaction.
@@ -23,4 +23,29 @@ Account class:
 Desposit / Withdrawal classes: 
 - amount function: this function returns the amount passed in when a new instance of the class is created.
 - updatedBalance function: this function updates the current account balance passed through the account class by adding or subtracting the deposited or withdrawn amount.  
-  
+
+## Running the Program
+
+### Dependencies: 
+
+To run the bank-tech-test program and the corresponding tests, you will first need to clone this repository. Then, please ensure you have the following programs installed on your device:
+
+- Node
+- NPM (this should be included in your node installation, however you will use this to install jest) 
+- Jest
+
+To run the tests, run 
+
+```bash
+jest
+```
+
+## What I Would Have Done 
+
+- Added validation and error handling: a user cannot withdraw more than they have in the bank
+- Restructuring: 
+   - Broken statement out into its own class to avoid the account class doing most of the heavy lifting. 
+   - Had one transaction class handling both deposits and withdrawals.
+
+
+
