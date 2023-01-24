@@ -30,6 +30,7 @@ describe("Account", () => {
     it("returns updated account balance following a withdrawal", () => {
       const account = new Account();
       account.withdraw(456);
+      console.log(account.accountBalance())
 
       expect(account.accountBalance()).toEqual(-456);
     });
@@ -40,8 +41,10 @@ describe("Account", () => {
       const account = new Account();
       account.deposit(1296.50);
       account.withdraw(456);
-
-      expect(account.statement()).toEqual('01/04/2020 || 1296.50 || 1296.50');
+      
+      expect(account.statement()).toContain('date || credit || debit || balance');
+      expect(account.statement()).toContain('24/01/2023 || 1296.50 || 1296.50');
+      expect(account.statement()).toContain('24/01/2023 || 456.00 || 840.50')
 
       expect(account.accountBalance()).toEqual(840.50)
     });
