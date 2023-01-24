@@ -30,7 +30,6 @@ describe("Account", () => {
     it("returns updated account balance following a withdrawal", () => {
       const account = new Account();
       account.withdraw(456);
-      console.log(account.accountBalance())
 
       expect(account.accountBalance()).toEqual(-456);
     });
