@@ -20,8 +20,8 @@ describe("statement", () => {
     const statementDate = new Date(2020, 3, 1).toLocaleDateString();
 
     expect(newStatement).toContain('date || credit || debit || balance');
-    expect(newStatement).toContain(`${statementDate} || 1296.50 || 1296.50`);
-    expect(newStatement).toContain(`${statementDate} || 456.00 || 840.50`);
+    expect(newStatement).toContain(`${statementDate} || 1296.50 ||  || 1296.50`);
+    expect(newStatement).toContain(`${statementDate} ||  || 456.00 || 840.50`);
 
     expect(account.accountBalance()).toEqual(840.50)
   });
