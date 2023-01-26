@@ -19,11 +19,9 @@ describe("statement", () => {
     const statementDate = new Date(2020, 3, 1).toLocaleDateString();
 
     expect(newStatement).toContain('date || credit || debit || balance');
-    expect(account.accountBalance()).toEqual(0)
-
-  })
+  });
   
-  it("returns a statement including a deposit", () => {
+  it("returns a statement correctly formatted for a deposit", () => {
     const statement = new Statement();
     const account = new Account();
     
@@ -34,10 +32,9 @@ describe("statement", () => {
 
     expect(newStatement).toContain('date || credit || debit || balance');
     expect(newStatement).toContain(`${statementDate} || 1296.50 ||  || 1296.50`)
-    expect(account.accountBalance()).toEqual(1296.50)
   });
 
-  it("returns a statement including a withdrawal", () => {
+  it("returns a statement correctly formatted for withdrawal", () => {
     const statement = new Statement();
     const account = new Account();
     
@@ -48,6 +45,5 @@ describe("statement", () => {
 
     expect(newStatement).toContain('date || credit || debit || balance');
     expect(newStatement).toContain(`${statementDate} ||  || 250.00 || -250`)
-    expect(account.accountBalance()).toEqual(-250)
   });
 });
